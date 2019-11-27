@@ -1,12 +1,28 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import React from "react";
+import ReactDOM from "react-dom";
+//import App from "./App";
+import HelloWorld from "./state_drills/HelloWorld";
+import Bomb from "./state_drills/Bomb";
+import Gun from "./state_drills/RouletteGun";
+import "./index.css";
 
-ReactDOM.render(<App />, document.getElementById('root'));
+function RenderAll() {
+  return (
+    <main className="App">
+      <div>
+        <h1>HELLO WORLD</h1>
+        <HelloWorld />
+      </div>
+      <div>
+        <h1>BOMB</h1>
+        <Bomb />
+      </div>
+      <div>
+        <h1>ROULETTEGUN</h1>
+        <Gun bulletInChamber={Math.ceil(Math.random() * 8)} />
+      </div>
+    </main>
+  );
+}
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+ReactDOM.render(<RenderAll />, document.getElementById("root"));
