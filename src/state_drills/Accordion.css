@@ -1,0 +1,21 @@
+.Accordion {
+  list-style-type: none;
+  padding: 0;
+}
+
+button {
+  height: 50px;
+  width: 100px;
+  margin: 20px 5px 20px 5px;
+}
+
+button:hover {
+  background-color: gray;
+  cursor: pointer;
+}
+
+li > p {
+  background-color: teal;
+  padding: 10px 0 10px 0;
+  color: wheat;
+}
