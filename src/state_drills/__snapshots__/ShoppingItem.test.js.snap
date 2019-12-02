@@ -1,0 +1,77 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ShoppingItem Component renders empty given no item 1`] = `
+<li>
+  <h2
+    style={
+      Object {
+        "textDecoration": null,
+      }
+    }
+  />
+  <button
+    onClick={[Function]}
+    type="button"
+  >
+    Check
+  </button>
+  <button
+    onClick={[Function]}
+    type="button"
+  >
+    Delete
+  </button>
+</li>
+`;
+
+exports[`ShoppingItem Component renders the item when supplied 1`] = `
+<li>
+  <h2
+    style={
+      Object {
+        "textDecoration": null,
+      }
+    }
+  >
+    test-item
+  </h2>
+  <button
+    onClick={[Function]}
+    type="button"
+  >
+    Check
+  </button>
+  <button
+    onClick={[Function]}
+    type="button"
+  >
+    Delete
+  </button>
+</li>
+`;
+
+exports[`ShoppingItem Component stroles through checked items 1`] = `
+<li>
+  <h2
+    style={
+      Object {
+        "textDecoration": "line-through",
+      }
+    }
+  >
+    test-item
+  </h2>
+  <button
+    onClick={[Function]}
+    type="button"
+  >
+    Check
+  </button>
+  <button
+    onClick={[Function]}
+    type="button"
+  >
+    Delete
+  </button>
+</li>
+`;

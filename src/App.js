@@ -10,6 +10,8 @@ import Bomb from "./state_drills/Bomb";
 import Gun from "./state_drills/RouletteGun";
 import Tabs from "./state/Tabs";
 import Accordion from "./state_drills/Accordion";
+import AddItemForm from "./state_drills/AddItemForm";
+import ShoppingList from "./state_drills/ShoppingList";
 /*
 const firstTooltip = (
   <Tooltip color="hotpink" message="tooltip message">
@@ -82,6 +84,8 @@ const sections = [
   }
 ];
 
+//function component
+/*
 function App() {
   return (
     <main className="App">
@@ -108,5 +112,89 @@ function App() {
     </main>
   );
 }
+*/
 
+class App extends React.Component {
+  state = {
+    shoppingItems: [
+      //put stub items in here for testing
+      { name: "apple", checked: false },
+      { name: "oranges", checked: true },
+      { name: "bread", checked: false }
+    ]
+  };
+
+  handleDeleteItem = item => {
+    console.log("handle delete", { item });
+    const newItems = this.state.shoppingItems.filter(itm => itm !== item);
+    this.setState({
+      shoppingItems: newItems
+    });
+  };
+
+  handleCheckItem = item => {
+    console.log("handle check", { item });
+    const newItems = this.state.shoppingItems.map(itm => {
+      if (itm === item) {
+        itm.checked = !itm.checked;
+      }
+      return itm;
+    });
+    this.setState({
+      shoppingItems: newItems
+    });
+  };
+
+  handleAddItem = itemName => {
+    console.log("handle add item", { itemName });
+    const newItems = [
+      ...this.state.shoppingItems,
+      { name: itemName, check: false }
+    ];
+
+    this.setState({
+      shoppingItems: newItems
+    });
+  };
+
+  render() {
+    return (
+      <main className="App">
+        <div>
+          <h1>HELLO WORLD</h1>
+          <HelloWorld />
+        </div>
+        <div>
+          <h1>BOMB</h1>
+          <Bomb />
+        </div>
+        <div>
+          <h1>ROULETTEGUN</h1>
+          <Gun bulletInChamber={Math.ceil(Math.random() * 8)} />
+        </div>
+        <div>
+          <h1>TABS</h1>
+          <Tabs tabs={tabsProp} />
+        </div>
+        <div>
+          <h1>ACCORDION</h1>
+          <Accordion sections={sections} />
+        </div>
+        <div>
+          <h1>SHOPPING LIST</h1>
+          <section>
+            <AddItemForm onAddItem={this.handleAddItem} />
+          </section>
+          <section>
+            <ShoppingList
+              items={this.state.shoppingItems}
+              onDeleteItem={this.handleDeleteItem}
+              onCheckItem={this.handleCheckItem}
+            />
+          </section>
+        </div>
+      </main>
+    );
+  }
+}
 export default App;
