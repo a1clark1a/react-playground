@@ -12,6 +12,7 @@ import Tabs from "./state/Tabs";
 import Accordion from "./state_drills/Accordion";
 import AddItemForm from "./state_drills/AddItemForm";
 import ShoppingList from "./state_drills/ShoppingList";
+import DemonymApp from "./demonymApp/DemonymApp";
 /*
 const firstTooltip = (
   <Tooltip color="hotpink" message="tooltip message">
@@ -192,6 +193,9 @@ class App extends React.Component {
               onCheckItem={this.handleCheckItem}
             />
           </section>
+        </div>
+        <div>
+          <DemonymApp />
         </div>
       </main>
     );
