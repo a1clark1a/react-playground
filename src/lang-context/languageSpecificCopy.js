@@ -19,6 +19,11 @@ const languageSpecificCopy = {
     title: "Kamusta ka?",
     body:
       "Magandang Umaga kaibigan! Halika at gumawa tayo ng isang programa sa internet"
+  },
+  klingon: {
+    title: "qaH jaj QaQ!!?",
+    body:
+      "amet consectetur adipisicing elit ba'choH dolor.expedita ba'choH. ea mollitia aperiam tempora Here neque adipisci, iure repudiandae aliquam, culpa nulla officia voluptatem quibusdam, impedit illo autem!"
   }
 };
 
